@@ -50,7 +50,8 @@ Most packets start like this:
 |y              |<a href="#type_y_detail">Add/remove Prey</a>|
 |o              |<a href="#type_o_detail">Verify code response</a>|
 |k              |<a href="#type_k_detail">Kill (unused in the game-code)</a>|
-
+|z              |<a href="#type_z_detail">Loopbot (Unused just does trace at this stage - Android)</a>|
+|
 
 <a name="type_6_detail" href="#type_6_detail"><h3>Packet "6" (Pre-init response)</h3></a>
 This is the first packet received. It is an encoded JavaScript-file that the client executes. It generates a string, that is further manipulated by the client and sent back to the server. This is done for verification / bot-protection (if the clients answer is wrong, the connection is closed).
@@ -637,6 +638,17 @@ Sent when another snake dies by running into the player; not sent when the kille
 |3-4|int16|killer snake id|
 |5-7|int24|total number of kills|
 
+
+<a name="type_z_detail" href="#type_z_detail"><h3>Packet "z" (Loopbot)</h3></a>
+Note: this does not appear to have any actions other than logging out some information on Android. Maybe it is used in the browser version of the game?
+
+|Bytes|Data type|Description|
+|-----|---------|-----------|
+|4|int32|chance (Chances we are a loop bot)|
+|4|int32|width|
+|4|height|int32|height|
+|2|int16|csd|
+|2|int16|vang|
 
 
 ## Serverbound
