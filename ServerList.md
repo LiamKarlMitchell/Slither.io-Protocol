@@ -14,6 +14,8 @@ Lets take this string as an example:
 For some reason the first character is never used. 
 This could be a version indicator (at the time of writing this the character is an `a`).
 
+If the first character is an a it means ads are allowed.
+
 result: `bcdefg`
 
 ### 2. Convert the characters to numbers
